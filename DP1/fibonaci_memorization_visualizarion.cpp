@@ -1,9 +1,11 @@
 #include<iostream>
 using namespace std;
 
-void print(int *arr, int size) {
-    for(int i = 0; i<size; i++) {
-        cout << arr[i] << " ";
+int position;
+
+void print(int *arr) {
+    for(int i = 0; i<position+1; i++) {
+        cout << arr[i] << "  ";
     }
     cout << endl;
 }
@@ -27,6 +29,7 @@ int fibo_helper(int n, int *ans) {
     ans[n] = a + b;
 
     // Return the final output
+    print(ans); // Print before returning
     return ans[n];
 }
 
@@ -39,12 +42,10 @@ int fibo(int n) {
     }
 
     int a = fibo_helper(n, ans);
-    print(ans, n+1);
     return a;
 }
 
 int main() {
-    int n;
-    cin >> n;
-    cout << fibo(n) << endl;
+    cin >> position;
+    cout << fibo(position) << endl;
 }
