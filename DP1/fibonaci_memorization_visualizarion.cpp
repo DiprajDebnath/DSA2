@@ -28,8 +28,10 @@ int fibo_helper(int n, int *ans) {
     // Save the output for future use
     ans[n] = a + b;
 
+    
+    print(ans); // Print 
+
     // Return the final output
-    print(ans); // Print before returning
     return ans[n];
 }
 
