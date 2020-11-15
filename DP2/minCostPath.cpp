@@ -7,12 +7,12 @@ int minCostPath(int **input, int m, int n, int r, int c) {
     }
 
     if(r >= m || c >= n) {
-        return INT32_MAX;
+        return 999;
     }
 
     int x = minCostPath(input, m, n, r, c+1);
-    int y = minCostPath(input, m, n, r+1, c);
-    int z = minCostPath(input, m, n, r+1, c+1);
+    int y = minCostPath(input, m, n, r+1, c+1);
+    int z = minCostPath(input, m, n, r+1, c);
 
     int ans = min(x, min(y, z)) + input[r][c];
 
@@ -20,11 +20,11 @@ int minCostPath(int **input, int m, int n, int r, int c) {
 }
 
 int minCostPath(int **input, int m, int n) {
-    return(input, m, n, 0, 0);
+    return minCostPath(input, m, n, 0, 0);
 }
 
 int main() {
-    int m,n;
+    int m ,n;
     cin >>m>>n;
     int **input = new int*[m];
     for(int i = 0; i < m; i++) {
@@ -34,5 +34,5 @@ int main() {
         }
     }
 
-    cout << minCostPath(input, m, n);
+    cout << minCostPath(input, m, n) << endl;
 }
