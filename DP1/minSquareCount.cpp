@@ -75,5 +75,5 @@ int minCount3(int n) {
 int main() {
     int n;
     cin>>n;
-    cout << minCount3(n);
+    cout << minCount2(n);
 }
